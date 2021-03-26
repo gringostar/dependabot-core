@@ -49,6 +49,14 @@ rescue StandardError
   raise
 end
 
+def bundler_project_dependency_file(project, filename:)
+  dependency_file = bundler_project_dependency_files(project).find{ |file| file.name == filename }
+
+  raise "Dependency File '#{filename} does not exist for project '#{project}'" unless dependency_file
+
+  dependency_file
+end
+
 RSpec.configure do |config|
   config.around do |example|
     if PackageManagerHelper.use_bundler_2? && example.metadata[:bundler_v1_only]
