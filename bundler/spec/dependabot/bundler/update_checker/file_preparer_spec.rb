@@ -261,7 +261,6 @@ RSpec.describe Dependabot::Bundler::UpdateChecker::FilePreparer do
 
       context "with multiple requirements" do
         let(:version) { "1.4.3" }
-        let(:gemspec_fixture_name) { "multiple_requirements" }
         let(:dependency_files) { bundler_project_dependency_files("gemspec_multiple_requirements") }
         its(:content) do
           is_expected.to eq(%(spec.add_dependency "business", ">= 1.4.3"\n))
@@ -269,7 +268,6 @@ RSpec.describe Dependabot::Bundler::UpdateChecker::FilePreparer do
 
         context "given as an array" do
           let(:dependency_files) { bundler_project_dependency_files("gemspec_multiple_requirements_array") }
-          let(:gemspec_fixture_name) { "multiple_requirements_array" }
           its(:content) do
             is_expected.to eq(%(spec.add_dependency "business", ">= 1.4.3"\n))
           end
