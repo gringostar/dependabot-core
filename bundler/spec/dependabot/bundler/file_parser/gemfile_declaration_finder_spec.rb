@@ -23,11 +23,6 @@ RSpec.describe Dependabot::Bundler::FileParser::GemfileDeclarationFinder do
 
   let(:gemfile) { bundler_project_dependency_file("gemfile", filename: "Gemfile") }
 
-  # let(:gemfile) do
-  #   Dependabot::DependencyFile.new(content: gemfile_body, name: "Gemfile")
-  # end
-  # let(:gemfile_body) { fixture("ruby", "gemfiles", "Gemfile") }
-
   describe "#gemfile_includes_dependency?" do
     subject(:gemfile_includes_dependency) do
       checker.gemfile_includes_dependency?
