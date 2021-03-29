@@ -58,7 +58,8 @@ def bundler_project_dependency_file(project, filename:)
 end
 
 def bundler_build_tmp_repo(project)
-  build_tmp_repo(project, path: "projects/bundler1")
+  fixture_project = PackageManagerHelper.use_bundler_2? ? "bundler2" : "bundler1"
+  build_tmp_repo(project, path: File.join("projects", fixture_project))
 end
 
 RSpec.configure do |config|

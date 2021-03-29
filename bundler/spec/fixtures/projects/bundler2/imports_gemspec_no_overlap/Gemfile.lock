@@ -1,19 +1,21 @@
-GIT
-  remote: https://github.com/gocardless/business.git
-  revision: d31e445215b5af70c1604715d97dd953e868380e
+PATH
+  remote: .
   specs:
-    business (1.10.0)
+    example (0.9.3)
+      business (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    business (1.4.0)
     statesman (1.2.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  business!
+  business (~> 1.4.0)
+  example!
   statesman (~> 1.2.0)
 
 BUNDLED WITH
